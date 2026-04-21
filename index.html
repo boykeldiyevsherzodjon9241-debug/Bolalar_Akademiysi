@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Bolajon Akademiyasi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🌈 Bolajon Akademiyasi 👋</h1>
+    <p class="subtitle">Bolajonlar va bilimlar dunyosiga xush kelibsiz!</p>
+
+    <!-- Katta bo‘limlar -->
+    <div id="main-sections">
+      <button class="section-btn" onclick="openSection('bilish')">🧠 Bilish jarayoni</button>
+      <button class="section-btn" onclick="openSection('bilimlar')">📚 Bilimlar olami</button>
+    </div>
+
+    <!-- Bilish jarayoni kichik bo‘limlari -->
+    <div id="bilish" class="sub-sections hidden">
+      <h2>🧠 Bilish jarayoni</h2>
+      <button class="sub-btn" onclick="openQuiz('idrok')">🎨 Idrok bo‘limi</button>
+      <button class="sub-btn" onclick="openQuiz('diqqat')">👀 Diqqat bo‘limi</button>
+      <button class="sub-btn" onclick="openQuiz('xotira')">🧠 Xotira bo‘limi</button>
+      <button class="sub-btn" onclick="openQuiz('tafakkur')">💡 Tafakkur bo‘limi</button>
+      <button class="sub-btn" onclick="openQuiz('nutq')">🗣 Nutq bo‘limi</button>
+      <button class="back-btn" onclick="goBack()">← Orqaga</button>
+    </div>
+
+    <!-- Bilimlar olami kichik bo‘limlari -->
+    <div id="bilimlar" class="sub-sections hidden">
+      <h2>📚 Bilimlar olami</h2>
+      <button class="sub-btn" onclick="openQuiz('mevalar')">🍎 Mevalar bog‘i</button>
+      <button class="sub-btn" onclick="openQuiz('matematika')">🔢 Matematik savollar</button>
+      <button class="sub-btn" onclick="openQuiz('fasllar')">🌸 Fasllar</button>
+      <button class="sub-btn" onclick="openQuiz('xorijiytil')">🇷🇺🇬🇧 Xorijiy til</button>
+      <button class="sub-btn" onclick="openQuiz('hayvonlar')">🐶 Hayvonlar dunyosi</button>
+      <button class="back-btn" onclick="goBack()">← Orqaga</button>
+    </div>
+
+    <!-- Savol-javob oynasi -->
+    <div id="quiz" class="hidden">
+      <h2 id="quiz-title"></h2>
+      <div class="question-box">
+        <p id="question-text"></p>
+        <small id="question-hint"></small>
+      </div>
+      <div class="answers" id="answers"></div>
+
+      <!-- To‘g‘ri javob pop-up -->
+      <div id="popup-correct" class="popup hidden">
+        <h2>✨ Zo‘r! 🎉 Barakalla! ✨</h2>
+        <button class="continue-btn" onclick="nextQuestion()">Davom →</button>
+      </div>
+
+      <!-- Noto‘g‘ri javob pop-up -->
+      <div id="popup-wrong" class="popup wrong hidden">
+        <h2>😢 Voy afsus!</h2>
+      </div>
+
+      <canvas id="confetti"></canvas>
+      <button class="back-btn" onclick="closeQuiz()">← Orqaga</button>
+    </div>
+
+    <!-- Burchakdagi ism-familya -->
+    <div class="name-box">
+      <p>Qurbonova Asal Dilshod qizi</p>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
