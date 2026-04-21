@@ -1,0 +1,226 @@
+body {
+  margin: 0;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  background: linear-gradient(135deg, #ff69b4, #8a2be2, #4b0082, #ffcc00);
+  color: white;
+  text-align: center;
+}
+
+.container {
+  padding: 30px;
+}
+
+h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.4em;
+  margin-bottom: 30px;
+}
+
+.section-btn, .sub-btn, .back-btn {
+  display: block;
+  width: 80%;
+  margin: 15px auto;
+  padding: 20px;
+  font-size: 1.6em;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: black;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.section-btn:hover, .sub-btn:hover, .back-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Ranglar */
+.section-btn:nth-child(1) { background: crimson; }
+.section-btn:nth-child(2) { background: royalblue; }
+
+.sub-btn:nth-child(1) { background: seagreen; }
+.sub-btn:nth-child(2) { background: orange; }
+.sub-btn:nth-child(3) { background: violet; }
+.sub-btn:nth-child(4) { background: teal; }
+.sub-btn:nth-child(5) { background: gold; }
+
+.back-btn { background: gray; font-size: 1.2em; }
+
+.hidden { display: none; }
+.question-box {
+  background: rgba(255,255,255,0.2);
+  padding: 30px;              /* kattaroq bo‘ldi */
+  border-radius: 20px;
+  margin-bottom: 30px;
+  font-size: 2em;             /* savol yozuvi kattaroq */
+  font-weight: bold;
+}
+
+.answers {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.answer {
+  flex: 1 1 40%;
+  padding: 25px;              /* tugmalar kattaroq */
+  font-size: 1.8em;           /* yozuv kattaroq */
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.answer:hover {
+  transform: scale(1.1);
+}
+
+/* Rangli tugmalar */
+.answer:nth-child(1) { background: crimson; }
+.answer:nth-child(2) { background: royalblue; }
+.answer:nth-child(3) { background: seagreen; }
+.answer:nth-child(4) { background: orange; }
+
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: yellow;
+  color: black;
+  padding: 30px;              /* kattaroq pop-up */
+  border-radius: 20px;
+  font-size: 2.5em;           /* yozuv kattaroq */
+  font-weight: bold;
+  display: none;
+}
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: darkblue;
+  border: 5px solid yellow;
+  color: white;
+  padding: 30px;
+  border-radius: 20px;
+  font-size: 2.5em;
+  font-weight: bold;
+  display: none;
+}
+
+.popup.show {
+  display: block;
+}
+
+.continue-btn {
+  margin-top: 20px;
+  padding: 15px 30px;
+  font-size: 1.5em;
+  background: yellow;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.question-box {
+  background: rgba(255,255,255,0.2);
+  padding: 20px;              /* oldin 30px edi */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  font-size: 1.6em;           /* oldin 2em edi */
+  font-weight: bold;
+}
+
+.answer {
+  flex: 1 1 40%;
+  padding: 18px;              /* oldin 25px edi */
+  font-size: 1.4em;           /* oldin 1.8em edi */
+  border-radius: 12px;
+}
+
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  border: 5px solid gold;
+  color: white;
+  padding: 25px;              /* ozroq kichik */
+  border-radius: 20px;
+  font-size: 2em;             /* oldin 2.5em edi */
+  font-weight: bold;
+  text-align: center;
+  z-index: 2000;              /* eng ustida ko‘rinadi */
+  display: none;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+canvas#confetti {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1500;              /* savol-javob tugmalaridan ustida */
+}
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #1e90ff, #00bfff);
+  border: 5px solid gold;
+  color: white;
+  padding: 25px;
+  border-radius: 20px;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  z-index: 2000;
+  display: none;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
+}
+
+.popup.show {
+  display: block;
+}
+
+.popup.wrong {
+  background: linear-gradient(135deg, #ff4d4d, #cc0000); /* qizil fon */
+  border: 5px solid black;
+  box-shadow: 0 0 20px rgba(0,0,0,0.8);
+}
+
+.popup.wrong h2 {
+  color: yellow;
+  text-shadow: 2px 2px 5px black;
+}
+.name-box {
+  position: fixed;
+  bottom: 20px;        /* pastki burchak */
+  right: 30px;         /* o‘ng burchak */
+  background: rgba(255,255,255,0.2); /* yarim tiniq fon */
+  padding: 10px 20px;
+  border-radius: 12px;
+  backdrop-filter: blur(5px); /* fonni tiniqroq qilish */
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+.name-box p {
+  margin: 0;
+  font-size: 1.4em;    /* ortacha razmer */
+  font-weight: bold;
+  font-family: 'Trebuchet MS', sans-serif; /* chiroyli shrift */
+  color: white;
+  text-shadow: 1px 1px 3px black; /* tiniq ko‘rinishi uchun */
+}
